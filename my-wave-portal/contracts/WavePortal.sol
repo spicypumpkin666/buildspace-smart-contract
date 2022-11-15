@@ -6,6 +6,7 @@ import "hardhat/console.sol";
 
 contract WavePortal {
 	uint256 totalWaves;
+	string[] waveAddresses;
 
 	constructor() {
 		console.log("Yo yo, I am a contract and I am smurt.");
@@ -19,6 +20,14 @@ contract WavePortal {
 	function getTotalWaves() public view returns (uint256) {
 		console.log("We have %d total waves!", totalWaves);
 		return totalWaves;
+	}
+
+	function storeAddresses(address) public {
+		waveAddresses.push(address);
+	}
+
+	function getAddresses() public view returns (string[]) {
+		return waveAddresses;
 	}
 }
 
